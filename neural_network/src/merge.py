@@ -115,6 +115,7 @@ def d_softmax_crossEntropy(y_pred, y_true):
 
 # 损失函数：交叉熵 
 # 假设这里y_true已经从原本的(32,) -> 每行独热码 (32, 10)
+# 独热码：例某一样本的y_true = 3 -> [0 0 1 0 0 0 0 0 0]
 def loss_function_crossEntropy(y_pred, y_true):
     eplison = 1e-8
     y_pred = np.clip(y_pred, eplison, 1 - eplison)
